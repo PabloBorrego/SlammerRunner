@@ -16,6 +16,7 @@ public class Guardia_Movement : MonoBehaviour
     //V Privadas
     private int puntoDestino;
     private float tiempoEspera;
+    private bool direccionVistazo;
 
 
     void Start()
@@ -46,8 +47,19 @@ public class Guardia_Movement : MonoBehaviour
             //Si el tiempo ha llegado a cero
             if (tiempoEspera <= 0)
             {
+                //Fija el nuevo punto de destino
                 puntoDestino += 1;
                 tiempoEspera = tiempoEsperaInicio;
+
+                if (direccionVistazo == true)
+                {
+                    direccionVistazo = false;
+                }
+                else
+                {
+                    direccionVistazo = true;
+                }
+
 
                 // Si has llegado al final de los puntos de destino reset de ruta
                 if (puntoDestino >= puntosPatrulla.Length)
@@ -60,7 +72,15 @@ public class Guardia_Movement : MonoBehaviour
             else
             {
                 tiempoEspera -= Time.deltaTime;
-                transform.Rotate(0, 0, AnguloVistazo * Time.deltaTime);
+
+
+                if (direccionVistazo == true) {
+                    transform.Rotate(0, 0, -AnguloVistazo * Time.deltaTime);
+                }
+                else{
+                   transform.Rotate(0, 0, AnguloVistazo * Time.deltaTime);
+                }
+                
             }
 
         }
