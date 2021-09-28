@@ -11,10 +11,10 @@ public class Guardia_Movement : MonoBehaviour
 
     public Transform[] puntosPatrulla;
     public float tiempoEsperaInicio;
-    
+    public Rigidbody2D rb;
+
     private int puntoDestino;
     private float tiempoEspera;
-
 
 
     // Start is called before the first frame update
@@ -27,10 +27,13 @@ public class Guardia_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RotarGuardia(puntoDestino);
         MoverGuardia();
     }
 
-    public void MoverGuardia() {
+    public void MoverGuardia()
+    {
+        
         //Se mueve hacia el siguiente punto
         transform.position = Vector2.MoveTowards(
                transform.position, puntosPatrulla[puntoDestino].position, velocidadMov * Time.deltaTime);
@@ -40,12 +43,13 @@ public class Guardia_Movement : MonoBehaviour
         {
             if (tiempoEspera <= 0)
             {
-                    puntoDestino += 1;
-                    Debug.Log(puntoDestino);
-                  //  RotarGuardia(puntoDestino);
-                    tiempoEspera = tiempoEsperaInicio;
+                
 
-                if (puntoDestino >= puntosPatrulla.Length) {
+                puntoDestino += 1;
+                tiempoEspera = tiempoEsperaInicio;
+
+                if (puntoDestino >= puntosPatrulla.Length)
+                {
                     Debug.LogError("Resetea");
                     puntoDestino = 0;
                     Debug.Log(puntoDestino);
@@ -59,13 +63,13 @@ public class Guardia_Movement : MonoBehaviour
         }
     }
 
-    /**
-    public void RotarGuardia(int i) {
+
+    public void RotarGuardia(int i)
+    {
 
         Vector2 direccion = puntosPatrulla[i].position - transform.position;
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
-        Quaternion rotacion = Quaternion.AngleAxis(angulo, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, velocidadRot * Time.deltaTime);
+        rb.rotation = angulo;
+
     }
-    */
 }
