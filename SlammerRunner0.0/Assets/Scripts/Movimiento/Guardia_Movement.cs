@@ -51,6 +51,7 @@ public class Guardia_Movement : MonoBehaviour
                 puntoDestino += 1;
                 tiempoEspera = tiempoEsperaInicio;
 
+                //Cambia la dirección en la que echa un vistazo para el siguiente punto
                 if (direccionVistazo == true)
                 {
                     direccionVistazo = false;
@@ -73,7 +74,7 @@ public class Guardia_Movement : MonoBehaviour
             {
                 tiempoEspera -= Time.deltaTime;
 
-
+                //Echa un vistazo rotando hacia un lado, cambia de lado en cada punto
                 if (direccionVistazo == true) {
                     transform.Rotate(0, 0, -AnguloVistazo * Time.deltaTime);
                 }
