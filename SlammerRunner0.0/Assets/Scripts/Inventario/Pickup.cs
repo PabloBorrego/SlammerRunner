@@ -20,7 +20,6 @@ public class Pickup : MonoBehaviour
             for (int i = 0; i<inventario.objetos.Length; i++) {
                 if (inventario.estaLleno[i] == false) {
                     inventario.estaLleno[i] = true;
-                    inventario.objetos[i] = gameObject;
                     Instantiate(itemImage, inventario.objetos[i].transform, false);
                     Destroy(gameObject);
                     break;

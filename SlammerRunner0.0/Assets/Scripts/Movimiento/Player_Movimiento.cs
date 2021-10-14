@@ -28,7 +28,6 @@ public class Player_Movimiento : MonoBehaviour
 
         //Si se está moviendo cambia lar toación hacia el frente
         if (movimientoDir != Vector2.zero) {
-
             Quaternion dirRotacion = Quaternion.LookRotation(Vector3.forward, movimientoDir);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, dirRotacion, velocidadRot * Time.deltaTime); 
         }
