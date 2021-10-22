@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryPlayer : MonoBehaviour
 {
-    public bool[] estaLleno;
-    public GameObject[]objetos;
+    public bool[] estaLleno = new bool[3];
+    public GameObject[]objetos = new GameObject[3];
 
 }
