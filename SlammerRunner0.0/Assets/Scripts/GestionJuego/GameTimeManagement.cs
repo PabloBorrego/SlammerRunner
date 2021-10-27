@@ -6,28 +6,37 @@ using UnityEngine.SceneManagement;
 
 public class GameTimeManagement : MonoBehaviour
 {
-    public float pauseTime = 5f;
+    public float tiempoPausa = 5f;
 
+    //Iniciar la pausa
     public void StartPause()
     {
-        StartCoroutine(freezeTiempoCaptura(this.pauseTime));
+        StartCoroutine(freezeTiempoCaptura(this.tiempoPausa));
     }
 
+    //Metodo para para el tiempo de ejecucion 5 segundos
     public IEnumerator freezeTiempoCaptura(float pauseTIme)
     {
-        Debug.Log("Inside PauseGame()");
+        //Se para el tiempo 
         Time.timeScale = 0f;
-        float pauseEndTime = Time.realtimeSinceStartup + pauseTime;
+
+        float pauseEndTime = Time.realtimeSinceStartup + tiempoPausa;
+
+        //Mientras no haya pasado el tiempo necesario
         while (Time.realtimeSinceStartup < pauseEndTime)
         {
+            //espera al siguiente frame
             yield return 0;
         }
+
+        //Se reactiva el tiempo
         Time.timeScale = 1f;
-        Debug.Log("Done with my pause");
-        PauseEnded();
+
+        recargaEscena();
     }
 
-    private void PauseEnded()
+    //recargo de la escena
+    private void recargaEscena()
     {
         SceneManager.LoadScene("SampleScene");
     }

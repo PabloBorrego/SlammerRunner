@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TopeMovimiento
   - GameManagement
+  - Escondite
   layers:
   - Default
   - TransparentFX

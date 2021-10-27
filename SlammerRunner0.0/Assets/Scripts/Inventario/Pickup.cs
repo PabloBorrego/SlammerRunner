@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    //Inventario del jugador e imagen del objeto para el inventario
     private InventoryPlayer inventario;
     public GameObject itemImage;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         //Se carga la instancia par poder manipular el inventario de 
         inventario = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryPlayer>();
     }
-
 
 
     //Cuando colisiona con el jugador este objeto se añade al inventario
@@ -32,8 +32,5 @@ public class Pickup : MonoBehaviour
                 }
             }
         }
-
-
-
     }
 }
