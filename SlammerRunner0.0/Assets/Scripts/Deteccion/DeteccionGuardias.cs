@@ -15,7 +15,7 @@ public class DeteccionGuardias : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_State>();
     }
 
-    // Update is called once per frame
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Si la colision detectada lleva la etiqeta de jugador y no está escondido
