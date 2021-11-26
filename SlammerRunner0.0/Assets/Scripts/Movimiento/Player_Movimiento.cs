@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Movimiento : MonoBehaviour
 {
+    public Animator animator;
 
     public float velocidadMov = 5f;
     public Rigidbody2D rb;
@@ -14,6 +15,16 @@ public class Player_Movimiento : MonoBehaviour
     //Espacio para los inputs del movimiento
     void Update()
     {
+        if (Mathf.Abs(movimientoDir.x) > 0 || Mathf.Abs(movimientoDir.y) > 0)
+        {
+            animator.SetFloat("Speed", 1);
+        }
+        else {
+            animator.SetFloat("Speed", 0);
+        }
+        
+
+
         //Inputs
         movimientoDir.x = Input.GetAxisRaw("Horizontal");
         movimientoDir.y = Input.GetAxisRaw("Vertical"); 
