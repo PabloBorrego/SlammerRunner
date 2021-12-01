@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1655791875095226271}
   - component: {fileID: 1655791875095226270}
   - component: {fileID: 1655791875095226265}
+  - component: {fileID: 6804423585413034454}
   m_Layer: 0
   m_Name: Alicates
   m_TagString: Untagged
@@ -98,7 +99,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &6804423585413034454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655791875095226267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec18de0bef2ac547ae9e4def87b0228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemImage: {fileID: 2789898103583635291, guid: 3dc1f2c9d31223d49923ba234eca2ff4,
+    type: 3}

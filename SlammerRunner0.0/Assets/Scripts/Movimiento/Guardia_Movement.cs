@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Guardia_Movement : MonoBehaviour
 {
-    
+    public GameObject fx;
     //V Publicas
     public float velocidadMov = 3f;
     public float velocidadRot = 5f;
@@ -13,19 +13,26 @@ public class Guardia_Movement : MonoBehaviour
     public float tiempoEsperaInicio;
     public Rigidbody2D rb;
 
+
     //V Privadas
+    public Animator animator;
     private int puntoDestino;
     private float tiempoEspera;
     private bool direccionVistazo;
-
+    private bool movimiento = false;
 
     void Start()
     {
+        fx = transform.Find("GuardiaFX").gameObject;
+        animator = fx.GetComponent<Animator>();
+
         puntoDestino = 0;
         tiempoEspera = tiempoEsperaInicio;
     }
     void Update()
     {
+        animator.SetBool("SeMueve",movimiento);
+
         //Rota y se desplaza
         RotarGuardia(puntoDestino);
         MoverGuardia();
@@ -36,6 +43,7 @@ public class Guardia_Movement : MonoBehaviour
     //Implementación del movimiento(Predefinido)
     public void MoverGuardia()
     {
+        movimiento = true;
         //Se mueve hacia el siguiente punto
         transform.position = Vector2.MoveTowards(
                transform.position, puntosPatrulla[puntoDestino].position, velocidadMov * Time.deltaTime);
@@ -73,6 +81,7 @@ public class Guardia_Movement : MonoBehaviour
             else
             {
                 tiempoEspera -= Time.deltaTime;
+                movimiento = false;
 
                 //Echa un vistazo rotando hacia un lado, cambia de lado en cada punto
                 if (direccionVistazo == true) {
