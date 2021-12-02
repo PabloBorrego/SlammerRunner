@@ -26,8 +26,8 @@ public class FollowCamera : MonoBehaviour
         //El Objeto enganchado a este script actualizará su posicion
 
         this.gameObject.transform.position = new Vector3(
-            pj.transform.position.x + posX,
-            pj.transform.position.y + posY, -500);
+            pj.transform.position.x,
+            pj.transform.position.y, -500);
 
     }
 }
