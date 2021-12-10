@@ -21,6 +21,9 @@ public class Pickup : MonoBehaviour
     {
         //si hay colision
         if (collision.CompareTag("Player")) {
+
+            FindObjectOfType<AudioManager>().Play("PickUpSound");
+
             //Recorre el array de objetos del jugador
             for (int i = 0; i<inventario.objetos.Length; i++) {
                 //Si encuentra un hueco vacío se introduce
