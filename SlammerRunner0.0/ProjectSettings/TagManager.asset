@@ -8,6 +8,7 @@ TagManager:
   - GameManagement
   - Escondite
   - Arma
+  - Barrotes
   layers:
   - Default
   - TransparentFX

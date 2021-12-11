@@ -21,8 +21,10 @@ public class DeteccionGuardias : MonoBehaviour
         //Si la colision detectada lleva la etiqeta de jugador y no está escondido
         if (collision.CompareTag("Player") && player.escondido.Equals(false))
             {
-            //Se reduce una vida y se recarga la escena
-            player.vidas -= 1;
+
+
+            FindObjectOfType<AudioManager>().Play("GameOver");
+
             gM.StartPause();
         }
     }
