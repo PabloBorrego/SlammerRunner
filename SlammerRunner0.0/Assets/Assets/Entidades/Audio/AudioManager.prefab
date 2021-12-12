@@ -47,18 +47,24 @@ MonoBehaviour:
   - name: MainTheme
     clip: {fileID: 8300000, guid: a660ff001e47bd34ca53e4d924f1d914, type: 3}
     volume: 0.5
-    pitch: 1.5
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 0}
-    volume: 0
-    pitch: 1.5
+    volume: 0.5
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PickUpSound
     clip: {fileID: 8300000, guid: f0a6e4b5d654e78458ff0d1bd4c89591, type: 3}
     volume: 1
-    pitch: 1.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuButton
+    clip: {fileID: 8300000, guid: 5e0ed63627ed83b4892c0deda3a5d77c, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
