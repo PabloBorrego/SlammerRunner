@@ -8,6 +8,12 @@ TagManager:
   - GameManagement
   - Escondite
   - Arma
+  - Llave
+  - Lima
+  - LlaveInglesa
+  - BarrotesNormales
+  - BarrotesFlojos
+  - BarrotesReforzados
   - Barrotes
   layers:
   - Default
@@ -51,4 +57,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Objetos
+    uniqueID: 2045116585
     locked: 0

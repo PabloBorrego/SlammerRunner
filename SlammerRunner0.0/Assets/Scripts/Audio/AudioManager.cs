@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour
     public void Play(string name) {
 
        Sound s = Array.Find(sonidos, sound => sound.name == name);
-
+        Debug.Log("PLAYEA");
         s.source.Play();
     }
 
@@ -60,7 +60,7 @@ public class AudioManager : MonoBehaviour
     {
 
         Sound s = Array.Find(sonidos, sound => sound.name == name);
-
+        Debug.Log("PARA");
         s.source.Stop();
     }
 

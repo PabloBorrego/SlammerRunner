@@ -63,7 +63,7 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         FindObjectOfType<AudioManager>().Play("MenuButton");
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MenuPrincipal");
 
     }
 

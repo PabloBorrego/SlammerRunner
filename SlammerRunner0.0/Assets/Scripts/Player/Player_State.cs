@@ -15,7 +15,6 @@ public class Player_State : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("MainTheme");
         escondido = false;
     }
 
