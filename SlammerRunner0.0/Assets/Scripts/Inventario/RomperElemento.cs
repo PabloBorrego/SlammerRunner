@@ -21,7 +21,6 @@ public class RomperElemento : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        
 
         InventoryPlayer inventario = collision.GetComponent<InventoryPlayer>();
 
@@ -35,6 +34,7 @@ public class RomperElemento : MonoBehaviour
         if (contadorObjetos >= 1 && gameObject.CompareTag("BarrotesFlojos")) {
             FindObjectOfType<AudioManager>().Play("Break");
             Destroy(gameObject);
+            
         }
 
         if (contadorObjetos >= 2 && gameObject.CompareTag("BarrotesNormales"))
@@ -48,6 +48,8 @@ public class RomperElemento : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Break");
             Destroy(gameObject);
         }
+
+        contadorObjetos = 0;
     }
 
 

@@ -38,6 +38,6 @@ public class GameTimeManagement : MonoBehaviour
     //recargo de la escena
     private void recargaEscena()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("DemoLevel");
     }
 }

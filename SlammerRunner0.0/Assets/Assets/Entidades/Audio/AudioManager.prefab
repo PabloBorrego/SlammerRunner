@@ -51,7 +51,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: GameOver
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 1f5e350086e568c4fa210383cf1ddf89, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
@@ -70,6 +70,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Break
     clip: {fileID: 8300000, guid: b12493caadf0d6d4da4f28d1a269e00c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: f6087cf2d0fbacb47aeb5036c77f191d, type: 3}
     volume: 1
     pitch: 1
     loop: 0

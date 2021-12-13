@@ -7,6 +7,7 @@ public class DeteccionGuardias : MonoBehaviour
 {
     private GameTimeManagement gM;
     private Player_State player;
+    public GameObject menuDerrota;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,24 @@ public class DeteccionGuardias : MonoBehaviour
         if (collision.CompareTag("Player") && player.escondido.Equals(false))
             {
 
-
             FindObjectOfType<AudioManager>().Play("GameOver");
-
-            gM.StartPause();
+            menuDerrota.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
+
+    public void Continue()
+    {
+
+        FindObjectOfType<AudioManager>().Play("MenuButton");
+        SceneManager.LoadScene("DemoLevel");
+    }
+
+    public void Menu()
+    {
+        FindObjectOfType<AudioManager>().Play("MenuButton");
+        SceneManager.LoadScene("MenuPrincipal");
+
+    }
+
 }
